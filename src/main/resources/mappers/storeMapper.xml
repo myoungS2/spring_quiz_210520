@@ -4,6 +4,7 @@
 
 <mapper namespace="com.quiz.lesson02.dao.StoreDAO">
 	<select id="selectStoreList" resultType="com.quiz.lesson02.model.Store">
+	<!-- id : storeDao에 있는 메소드의 명/ resultType : store(테이블)을 가지고 왔을 때 하나의 행의 정보 -->
 		SELECT
 			*
 		FROM
