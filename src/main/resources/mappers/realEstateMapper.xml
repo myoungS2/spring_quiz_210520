@@ -35,7 +35,7 @@
 	        `rentPrice` < #{rentPrice}
 	        ]]>
 	</select>
-		<select id="selectRealEstateByAreaAndPrice" parameterType="map" resultType="com.quiz.lesson03.model.RealEstate">
+	<select id="selectRealEstateByAreaAndPrice" parameterType="map" resultType="com.quiz.lesson03.model.RealEstate">
 		SELECT
  			`id`
 			,`realtorId`
@@ -59,4 +59,26 @@
 	        ]]>     
 	    ORDER BY `id` DESC    
 	</select>
+	<insert id="insertRealEstate" parameterType="com.quiz.lesson03.model.RealEstate">
+		INSERT INTO `real_estate`
+		(
+			`realtorId`
+			,`address`
+			,`area`
+			,`price`
+			,`rentPrice`
+			,`createdAt`
+			,`updatedAt`
+		)
+		VALUES
+		(
+			#{realtorId}
+			, #{address}
+			, #{area}
+			, #{price}
+			, #{rentPrice}
+			, NOW()
+			, NOW()
+		)
+	</insert>
 </mapper>
