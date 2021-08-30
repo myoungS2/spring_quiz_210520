@@ -33,9 +33,15 @@ public class RealEstateBO {
 	}
 	
 	// INSERT
-	
 	// 1
 	public int addRealEstate (RealEstate realEstate) {
 		return realEstateDAO.insertRealEstate(realEstate);
+	}
+	
+	// 2
+	public int addRealEstateAsField (
+			int realtorId ,String address, int area, String type, int price, Integer rentPrice) {
+		// "썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120
+		return realEstateDAO.insertRealEstateAsField(realtorId ,address,area, type, price, rentPrice);
 	}
 }
