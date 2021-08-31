@@ -38,4 +38,8 @@ public interface RealEstateDAO {
 			@Param("id") int id, 
 			@Param("type") String type, 
 			@Param("price") int price);
+	
+	// DELETE
+	// 1
+	public int deleteRealEstateById (int id);
 }
