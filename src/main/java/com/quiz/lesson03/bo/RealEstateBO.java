@@ -44,4 +44,10 @@ public class RealEstateBO {
 		// "썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120
 		return realEstateDAO.insertRealEstateAsField(realtorId ,address,area, type, price, rentPrice);
 	}
+	
+	// UPDATE
+	// 1
+	public int updateRealEstate (int id, String type, int price) {
+		return realEstateDAO.updateRealEstate(id, type, price);
+	}
 }
