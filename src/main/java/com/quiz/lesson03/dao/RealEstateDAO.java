@@ -41,5 +41,5 @@ public interface RealEstateDAO {
 	
 	// DELETE
 	// 1
-	public int deleteRealEstateById (int id);
+	public int deleteRealEstateById (@Param("id")int id);
 }

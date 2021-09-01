@@ -16,7 +16,7 @@
 		<h1>판매자 추가</h1>
 		<form method="post" action="/lesson04/quiz01/add_seller">
 				<b>닉네임</b>
-				<input type="text" name="nickName" class="form-control"><br>
+				<input type="text" name="nickname" class="form-control"><br>
 				<b>프로필 사진 url</b>
 				<input type="text" name=profileImage class="form-control"><br>
 				<b>온도</b>
