@@ -25,8 +25,8 @@ public class SellerBO {
 	}
 	
 	//  3. seller 검색 출력
-	public Seller getSellerInfo(int id) {
-		return sellerDAO.selectSellerInfo(id);
+	public Seller getSellerById(int id) {
+		return sellerDAO.selectSellerById(id);
 	}
 
 }

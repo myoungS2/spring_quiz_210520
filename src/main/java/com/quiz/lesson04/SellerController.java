@@ -15,6 +15,14 @@ import com.quiz.lesson04.model.Seller;
 @RequestMapping("/lesson04/quiz01")
 public class SellerController {
 	
+	/*
+	 * getmapping -> 주소치고 들어올 수 있음
+	 * postmapping -> 주소치고 들어올 수 없음
+	 * 
+	 * ### -> 쿼리에러..!
+	 * 
+	 * */
+	
 	// bo 연결
 	@Autowired
 	private SellerBO sellerBO;
@@ -31,10 +39,10 @@ public class SellerController {
 	public String addSeller(
 			// 닉네임, 프로필사진, 온도 
 			@RequestParam("nickname") String nickname,
-			@RequestParam("profileImage") String profileImage,
+			@RequestParam(value="profileImage", required = false) String profileImage, // null값 일 수 있음
 			@RequestParam("temperature") double temperature) {
 		
-		// DB
+		// date들을 DB에 insert
 		sellerBO.addSeller(nickname, profileImage, temperature);
 
 		return "lesson04/afterAddSeller";
@@ -42,22 +50,25 @@ public class SellerController {
 	
 	// 2. seller 출력
 	// 요청 URL : http://localhost/lesson04/quiz01/seller_info
-	@GetMapping("/seller_info")
-	public String getLastSeller(Model model) {
-		Seller seller = sellerBO.getLastSeller();
-		
-		model.addAttribute("seller", seller);
-		model.addAttribute("title", "판매자 정보");
-		
-		return "lesson04/sellerInfo";
-	}
-	
 	// 3. seller 검색 출력
 	// 요청 URL : http://localhost/lesson04/quiz01/seller_info?id=1
 	@GetMapping("/seller_info")
-	public String getSellerInfo(
-			@RequestParam("id") int id) {
-		sellerBO.getSellerInfo(id);
+	public String getLastSeller(
+			@RequestParam(value="id", required=false) Integer id,
+			Model model) {
+		
+		Seller seller = null;
+		
+		if (id == null) {
+			// select DB-> 가장 최근에 추가된 판매자 정보
+			seller = sellerBO.getLastSeller();
+		} else {
+			// select DB -> id에 해당하는 판매자 정보
+			seller = sellerBO.getSellerById(id);
+		}
+	
+		model.addAttribute("seller", seller);
+		
 		return "lesson04/sellerInfo";
 	}
 }

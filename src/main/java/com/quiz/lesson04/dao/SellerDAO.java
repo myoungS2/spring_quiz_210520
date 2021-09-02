@@ -18,5 +18,5 @@ public interface SellerDAO {
 	public Seller selectLastSeller();
 	
 	//  3. seller 검색 출력
-	public Seller selectSellerInfo(int id);
+	public Seller selectSellerById(int id);
 }

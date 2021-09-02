@@ -22,15 +22,18 @@
  	</insert>
  	<select id="selectLastSeller" resultType="com.quiz.lesson04.model.Seller">
  		SELECT
- 			`nickname`
+ 			`id`
+ 			,`nickname`
 			,`profileImage`
 			,`temperature`
+			,`createdAt`
+			,`updatedAt`
 		FROM
 			`seller`
 		ORDER BY `id` DESC
 		LIMIT 1	
  	</select>
- 	<select id="selectLastSeller" parameterType="int" resultType="com.quiz.lesson04.model.Seller">
+ 	<select id="selectSellerById" parameterType="int" resultType="com.quiz.lesson04.model.Seller">
  		SELECT
  			`nickname`
 			,`profileImage`

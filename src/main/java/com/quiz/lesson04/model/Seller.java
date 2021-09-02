@@ -5,7 +5,7 @@ import java.util.Date;
 public class Seller {
 	private int id;
 	private String nickname;
-	private String profileImage;
+	private String profileImage = "https://www.missioninfra.net/img/noimg/noimg_4x3.gif"; // null값 일 때, 기본 값 사용 됨
 	private double temperature;
 	private Date createdAt;
 	private Date updatedAt;
