@@ -21,7 +21,6 @@
 			,#{grade}
 			,NOW()
 			,NOW()
- 		
  		)
  	</insert>
  	<select id="selectRealtorById" parameterType="int" resultType="com.quiz.lesson04.model.Realtor">

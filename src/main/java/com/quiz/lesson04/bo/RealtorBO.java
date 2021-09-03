@@ -19,7 +19,7 @@ public class RealtorBO {
 	}
 	
 	// select 
-	public Realtor getRealtorById(int id) {
+	public Realtor getRealtorById(int id) /* int -> 필수값..!임을 나타내기 */ {
 		return realtorDAO.selectRealtorById(id);
 	}
 }

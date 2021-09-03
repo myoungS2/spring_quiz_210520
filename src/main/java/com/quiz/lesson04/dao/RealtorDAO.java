@@ -7,7 +7,9 @@ import com.quiz.lesson04.model.Realtor;
 @Repository
 public interface RealtorDAO {
 	
+	// insert
 	public void insertRealtor(Realtor realtor);
 	
+	// select
 	public Realtor selectRealtorById(int id);
 }

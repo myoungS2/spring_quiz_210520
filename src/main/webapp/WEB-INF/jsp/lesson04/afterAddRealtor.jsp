@@ -15,7 +15,7 @@
 </body>
 	<div class="container">
 		<h1>공인중개사 정보</h1>
-		<table>
+		<table class="table">
 			<tr>
 				<th>ID</th>
 				<td>${realtor.id}</td>
