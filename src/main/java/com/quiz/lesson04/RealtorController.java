@@ -39,7 +39,6 @@ public class RealtorController {
 	}
 	
 	// 요청 URL : http://localhost/lesson04/quiz02/add_realtor
-	// 요청 URL : http://localhost/lesson04/quiz02?id=3
 	@PostMapping("/add_realtor")
 	public String addRealtor(
 			@ModelAttribute Realtor realtor,
