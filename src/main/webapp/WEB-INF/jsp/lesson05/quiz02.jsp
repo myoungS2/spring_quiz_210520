@@ -17,7 +17,7 @@
 	<%-- 1. JSTL forEach --%>
 	<div class="container">
 		<h1>HOT 5</h1>
-		<table class="table">
+		<table class="table text-center">
 			<thead>
 				<tr>
 					<th>순위</th>
@@ -38,7 +38,7 @@
 	<%-- 2. JSTL 응용하기 --%>
 	<div class="container">
 		<h1>멤버십</h1>
-		<table class="table">
+		<table class="table text-center">
 			<thead>
 				<tr>
 					<th>이름</th>
@@ -47,11 +47,12 @@
 					<th>포인트</th>
 				</tr>
 			</thead>
-			<c:forEach var="member" items="${membership}" varStatus="">
+			<c:forEach var="member" items="${membership}">
 			<tbody>
 				<tr>
 					<td>${member.name}</td>
 					<td>${member.phoneNumber}</td>
+					<%-- 조건1 등급별 글씨색 --%>
 					<c:choose>
 						<c:when test="${member.grade eq 'GOLD'}">
 							<td class="text-warning">	
@@ -67,8 +68,9 @@
 							<td>${member.grade}</td>
 						</c:otherwise>	
 					</c:choose>
+					<%-- 조건2 포인트 글씨색 --%>
 					<c:choose>	
-						<c:when test="${member.point > 5000}">
+						<c:when test="${member.point >= 5000}">
 							<td class="text-primary">
 								${member.point}
 							</td>
