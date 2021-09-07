@@ -26,19 +26,19 @@
 					<th>득표율</th>
 				</tr>
 			</thead>
-			<c:forEach var="candidate" items="${candidates}" varStatus="status">
 			<tbody>
+			<c:forEach var="candidate" items="${candidates}" varStatus="status">
 				<tr>
 					<td>${status.count}</td>
-					<fmt:formatNumber var="votes" value="${cadidate}" type="number"/>
-					<td>${votes}</td>
-					<c:set var="totalVote" value="1000000" />
-					<fmt:formatNumber var="turnout" value="${votes / totalVote}"  type="percent" />
-					<td>${turnout}</td>
+					<td><fmt:formatNumber value="${candidate}" /></td>
+					<%-- <td><fmt:formatNumber value="${candidate / 1000000}" type="percent" /></td> --%>
+					<%-- 총 득표율을 view에서 가지고 있는 것은 좋지 않음..! --%>
+					<td><fmt:formatNumber value="${candidate / totalVote}" type="percent" /></td>
 				</tr>
-			</tbody>
 			</c:forEach>
+			</tbody>
 		</table>
+		
 	<%-- 2. JSTL Formatter 통화, 날짜 --%>	
 		<h1>2. 카드명세서</h1>
 		<table class="table text-center">
@@ -50,18 +50,24 @@
 					<th>할부</th>
 				</tr>
 			</thead>
-			<c:forEach var="cardbill" items="${cardbills}">
 			<tbody>
+			<c:forEach var="bill" items="${cardBills}">
 				<tr>
-					<td>${cardbill.store}</td>
-					<fmt:formatNumber var="pay" value="${cardbill.pay}" type="number" />
-					<td>${pay}</td>
-					<fmt:formatDate var="datePattern" value="${cardbill.date}" pattern="yyyy년 mm월 dd일" />
-					<td>${datePattern}</td>
-					<td>${cardbill.installment}</td>
+					<td>${bill.store}</td>
+					<td><fmt:formatNumber value="${bill.pay}" type="currency" /></td>
+					<%-- <td><fmt:formatDate value="${datePattern}" pattern="yyyy년 mm월 dd일" /></td> --%>
+					<%-- string이기 때문에 바로 fmt를 입힐 수 없음 --%>
+					<td>
+						<%-- 1. date객체로 만들기 (저장o,출력x) --%>
+						<fmt:parseDate value="${bill.date}" pattern="yyyy-mm-dd" var="date" />
+						<%-- 2. 원하는 형태의 fmt로 만들기 --%>
+						<fmt:formatDate value="${date}" pattern="yyyy년 m월 d일"/>
+					</td>
+					<td>${bill.installment}</td>
 				</tr>
-			</tbody>
 			</c:forEach>
+			</tbody>
+			
 		</table>
 	</div>
 </body>

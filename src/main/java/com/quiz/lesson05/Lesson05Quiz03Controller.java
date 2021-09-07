@@ -22,7 +22,13 @@ public class Lesson05Quiz03Controller {
 		candidates.add(173942); 
 		candidates.add(563057); 
 		
+		int total = 0;
+		for (Integer candidate : candidates) {
+			total += candidate;
+		}
+		
 		model.addAttribute("candidates", candidates);
+		model.addAttribute("totalVote", total);
 		
 		// ListMap
 		List<Map<String, Object>> cardBills = new ArrayList<>();
