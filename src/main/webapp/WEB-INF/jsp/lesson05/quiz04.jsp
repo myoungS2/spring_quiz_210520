@@ -31,20 +31,23 @@
 			<tbody>
 				<c:forEach var="member" items="${members}" varStatus="status">
 				<tr>
+					<td>${status.count}</td>
 					<td>${member.name}</td>
 					<td>${member.phoneNumber}</td>
-					<td>${fn:replace(member.nationality, '삼국시대 ', '삼국-')}</td>
-					<td><b>${fn:split(member.email, '@')[0]}</b>${fn:split(member.email, '@')[1]}</td>
-					<c:choose>
-						<c:when test="${fn:length(member.introduce gt 15)}">
-							<td>
-								${member.introduce}
-							</td>
-						</c:when>
-						<c:otherwise>
-							<c:out value="${fn:substring(member.intoduce, 0, 15)}" />
-						</c:otherwise>
-					</c:choose>
+					<td>
+						${fn:replace(member.nationality, "삼국시대", "삼국 -")}
+					</td>
+					<td>
+						<b>${fn:split(member.email, "@")[0]}</b>@${fn:split(member.email, "@")[1]} <%-- 구분자는 사라지기 때문에 따로 써주기..! --%>
+					</td>
+					<td>
+						<c:if test="${fn:length(member.introduce) > 15}">
+								${fn:substring(member.introduce, 0, 15)}...
+						</c:if>
+						<c:if test="${fn:length(member.introduce) <= 15}">
+							${member.introduce}
+						</c:if>
+					</td>	
 				</tr>
 				</c:forEach>
 			</tbody>

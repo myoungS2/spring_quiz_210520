@@ -1,19 +1,12 @@
 package com.quiz.lesson05.model;
 
 public class Member {
-	private int id;
 	private String name;
 	private String phoneNumber;
 	private String email;
 	private String nationality;
 	private String introduce;
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getName() {
 		return name;
 	}
