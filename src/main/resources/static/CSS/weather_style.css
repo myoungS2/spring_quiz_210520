@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+a {text-decoration:none; color:white;}
+a:hover {text-decoration:none; color:white;}
+
+#wrap {width:1200px;}
+
+nav {width:200px; background-color:#0288D9}
+nav .nav {color:white;}
+
+.logo1 {width:25px; height:25px;}
+.logo-text {font-weight:bold;}
+
+section {width:1000px;}
+
+footer {height:80px;}
+.logo2 {width:250px;}
