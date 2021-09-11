@@ -25,7 +25,7 @@
 				</div>
 				<div>
 					<ul class="nav flex-column mt-4">
-						 <li class="nav-item font-weight-bold"><a href="#" class="nav-link">날씨</a></li>
+						 <li class="nav-item font-weight-bold"><a href="/lesson05/quiz05/1" class="nav-link">날씨</a></li>
 						 <li class="nav-item font-weight-bold"><a href="/lesson05/quiz05/2" class="nav-link">날씨입력</a></li> <%-- 날씨입력 jsp로 넘겨주기..! --%>
 						 <li class="nav-item font-weight-bold"><a href="#" class="nav-link">테마날씨</a></li>
 						 <li class="nav-item font-weight-bold"><a href="#" class="nav-link">관측기후</a></li>
@@ -48,12 +48,32 @@
 					<tbody>
 						<c:forEach var="weather" items="${weatherHistory}">
 							<tr>
-								<td>${weather.date}</td>
-								<td>${weather.weather}</td>
-								<td>${weather.temperatures}</td>
-								<td>${weather.precipitation}</td>
+								<td>
+								<fmt:formatDate value="${weather.date}" pattern="yyyy년 M월 d일" />
+								</td>
+								<td>
+									<c:choose>
+										<c:when test="${weather.weather eq  '맑음'}">
+											<img src="/images/sunny.jpg" alt="맑음">
+										</c:when>
+										<c:when test="${weather.weather eq  '구름조금'}">
+											<img src="/images/partlyCloudy.jpg" alt="구름조금">
+										</c:when>
+										<c:when test="${weather.weather eq  '흐림'}">
+											<img src="/images/cloudy.jpg" alt="흐림">
+										</c:when>
+										<c:when test="${weather.weather eq '비'}">
+											<img src="/images/rainy.jpg" alt="비">
+										</c:when>
+										<c:otherwise>
+											${weather.weather}
+										</c:otherwise>
+									</c:choose>
+								</td>
+								<td>${weather.temperatures}℃</td>
+								<td>${weather.precipitation}mm</td>
 								<td>${weather.microDust}</td>
-								<td>${weather.windSpeed}</td>
+								<td>${weather.windSpeed}km/h</td>
 							</tr>
 						</c:forEach>
 					</tbody>

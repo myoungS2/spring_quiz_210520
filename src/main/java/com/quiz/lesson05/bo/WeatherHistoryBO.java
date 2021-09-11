@@ -21,4 +21,7 @@ public class WeatherHistoryBO {
 	}
 	
 	// insert
+	public void addWeatherHistory(WeatherHistory weatherHistory) {
+		weatherHistoryDAO.insertWeatherHistory(weatherHistory);
+	}
 }

@@ -23,7 +23,7 @@
 					</div>
 					<div>
 						<ul class="nav flex-column mt-4">
-							 <li class="nav-item font-weight-bold"><a href="#" class="nav-link">날씨</a></li>
+							 <li class="nav-item font-weight-bold"><a href="/lesson05/quiz05/1" class="nav-link">날씨</a></li>
 							 <li class="nav-item font-weight-bold"><a href="/lesson05/quiz05/2" class="nav-link">날씨입력</a></li> <%-- 날씨입력 jsp로 넘겨주기..! --%>
 							 <li class="nav-item font-weight-bold"><a href="#" class="nav-link">테마날씨</a></li>
 							 <li class="nav-item font-weight-bold"><a href="#" class="nav-link">관측기후</a></li>
@@ -36,7 +36,8 @@
 	                    <div class="d-flex justify-content-between mt-5">
 	                        <div class="d-flex align-items-center">
 	                            <div class="input-label">날짜</div> 
-	                            <input type="text" class="form-control" id="date" name="date">
+	                            <!-- datepicker 사용해주기..! -->
+	                            <input type="text" class="form-control" id="date" name="date"> <!-- model의 필드명과 일치하는지 확인할 것 -->
 	                        </div>
 	                        <div class="d-flex align-items-center">
 	                            <div class="input-label">날씨</div> 
