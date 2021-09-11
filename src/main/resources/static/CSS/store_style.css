@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+a {text-decoration: none; color:black;}
+a:hover {text-decoration: none; color:black;}
+
+#wrap {width:800px;}
+
+header {height:100px;}
+header .logo {color:white; font-weight:bold; font-size:30px;}
+
+footer {height:500px;}
