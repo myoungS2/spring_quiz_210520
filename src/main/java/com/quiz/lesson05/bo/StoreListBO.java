@@ -15,7 +15,7 @@ public class StoreListBO {
 	@Autowired
 	private StoreListDAO storeListDAO;
 	
-	// select
+	// select -> store
 	public List<StoreList> getStoreList(){
 		List<StoreList> storeList = storeListDAO.selectStoreList(); // lesson05의 Store model인데 왜...lesson02에 대한 에러가 발생하지?
 		return storeList;

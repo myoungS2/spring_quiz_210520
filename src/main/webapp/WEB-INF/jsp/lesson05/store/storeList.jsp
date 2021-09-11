@@ -24,15 +24,15 @@
 		</header>
 		<section class="border border-info p-3">
 			<!-- 반복문으로 가게정보 가져오기 -->
-			<c:forEach var="store" items="${storeList}">
+			<c:forEach var="store" items="${StoreList}">
 				<!-- click-> 가게별 리뷰(desc, 별점) -->
-				<form method="post" action="store">
-				<div>
-					<b>${store.name}</b><br> <!-- 가게이름 -->
-					<small>${store.phoneNumber}</small><br> <!-- 전화번호 -->
-					<small>${store.address}</small> <!-- 주소 -->
-				</div>
-				</form>
+				<a href="/lesson05/quiz06/2?storeId=${store.id}&storeName=${store.name}">
+					<div class="border border-info m-1 p-3">
+						<b>${store.name}</b><br> <!-- 가게이름 -->
+						<small>${store.phoneNumber}</small><br> <!-- 전화번호 -->
+						<small>${store.address}</small> <!-- 주소 -->
+					</div>
+				</a>	
 			</c:forEach>
 		</section>
 		<footer>

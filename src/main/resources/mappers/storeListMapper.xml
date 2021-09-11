@@ -5,7 +5,7 @@
 <mapper namespace="com.quiz.lesson05.dao.StoreListDAO">
 	<select id="selectStoreList" resultType="com.quiz.lesson05.model.StoreList">
 		SELECT
-			,`id`
+			`id`
 			,`name`
 			,`phoneNumber`
 			,`address`
