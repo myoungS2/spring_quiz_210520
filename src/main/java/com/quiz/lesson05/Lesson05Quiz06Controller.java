@@ -36,7 +36,7 @@ public class Lesson05Quiz06Controller {
 	
 	// storeReview (new_review 테이블)
 	// store 선택시 -> localhost/lesson05/quiz06/2?storeId=1&storeName= 넘겨받기..!
-	@RequestMapping("2")
+	@RequestMapping("/2")
 	public String storeReview(
 			@RequestParam("storeId") int storeId,
 			@RequestParam("storeName") String storeName,
