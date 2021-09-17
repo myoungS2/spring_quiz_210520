@@ -21,7 +21,17 @@ public class BookmarkBO {
 	}
 	
 	// select 
-	public List<Bookmark> getBookmark() {
-		return bookmarkDAO.selectBookmark();
+	public List<Bookmark> getBookmarkList() {
+		return bookmarkDAO.selectBookmarkList();
+	}
+	
+	// quiz02 
+	public Bookmark getBookmarkByUrl(String url) {
+		return bookmarkDAO.selectBookmarkByUrl(url);
+	}
+	
+	// delete
+	public int deleteBookmarkById (int id) {
+		return bookmarkDAO.deleteBookmarkById(id);
 	}
 }
